@@ -1,3 +1,4 @@
+//HELLO HI DYLAN TSAI ITS ME JACOB YOUR FRIEND JACOB YOUR CLASSMATE NAMED JACOB WHO IS IN YOUR COMP SCI CLASS AGAIN HI HOW ARE YOU IS ALL I WANT TO KNOW THATS ALL I WANT TO KNOW JUST TELL ME HOW YOU ARE OK BYE THANKS SEE YOU LATER DYLAN TSAI MY CLASSMATE
 import java.io.*;
 import java.nio.file.*;
 import java.nio.charset.StandardCharsets;
@@ -70,7 +71,16 @@ public class MyFileWriter {
     }
     private static void printTotalFileSize(String... fileNames) {
     
-        System.out.println("Total size of all files: ...TBD... bytes");
-    }
+        int totalSize = 0;
+        for(String file : fileNames)
+        {
+            try {
+                totalSize += Files.size(Paths.get(file));
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(totalSize);    }
 
 }
