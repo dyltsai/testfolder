@@ -1,4 +1,4 @@
-//HELLO HI DYLAN TSAI ITS ME JACOB YOUR FRIEND JACOB YOUR CLASSMATE NAMED JACOB WHO IS IN YOUR COMP SCI CLASS AGAIN HI HOW ARE YOU IS ALL I WANT TO KNOW THATS ALL I WANT TO KNOW JUST TELL ME HOW YOU ARE OK BYE THANKS SEE YOU LATER DYLAN TSAI MY CLASSMATE
+//HELLO HI DYLAN TSAI ITS ME JACOB YOUR FRIEND JACOB MASSEY YOUR CLASSMATE NAMED JACOB WHO IS IN YOUR COMP SCI CLASS AGAIN HI HOW ARE YOU IS ALL I WANT TO KNOW THATS ALL I WANT TO KNOW JUST TELL ME HOW YOU ARE OK BYE THANKS SEE YOU LATER DYLAN TSAI MY CLASSMATE
 import java.io.*;
 import java.nio.file.*;
 import java.nio.charset.StandardCharsets;
@@ -60,6 +60,8 @@ public class MyFileWriter {
         // } catch (IOException e) {
         //     e.printStackTrace();
         // }
+
+        printTotalFileSize("file1.txt", "directory1/file2.txt", ".hiddenDirectory/file3.txt");
     }
     private static void printFileSize(String fileName) {
         try {
@@ -70,17 +72,15 @@ public class MyFileWriter {
         }
     }
     private static void printTotalFileSize(String... fileNames) {
-    
-        int totalSize = 0;
-        for(String file : fileNames)
-        {
-            try {
-                totalSize += Files.size(Paths.get(file));
-            }
-            catch (IOException e) {
-                e.printStackTrace();
+        long totalSize = 0;
+        for (String fileName : fileNames) {
+            File file = new File(fileName);
+            if (file.exists()) {
+                totalSize += file.length();
             }
         }
-        System.out.println(totalSize);    }
+        System.out.println("Total size of all files: " + totalSize + " bytes");
+    }
+    
 
 }
