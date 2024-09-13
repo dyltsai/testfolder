@@ -61,7 +61,7 @@ public class MyFileWriter {
         //     e.printStackTrace();
         // }
 
-        printTotalFileSize("file1.txt", "directory1/file2.txt", ".hiddenDirectory/file3.txt");
+        printTotalFileSize(".hiddenpassword.txt", "moresecrets.txt", ".secretdata/secretfile.txt");
     }
     private static void printFileSize(String fileName) {
         try {
