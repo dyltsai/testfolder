@@ -59,9 +59,7 @@ public class MyFileWriter {
         //     Files.write(Paths.get(fileName5), data.getBytes(StandardCharsets.UTF_8));
         // } catch (IOException e) {
         //     e.printStackTrace();
-        // }
-
-        printTotalFileSize("file1.txt", "directory1/file2.txt", ".hiddenDirectory/file3.txt");
+        printTotalFileSize(".hiddenpassword.txt", "moresecrets.txt", ".secretdata/secretfile.txt");
     }
     private static void printFileSize(String fileName) {
         try {
